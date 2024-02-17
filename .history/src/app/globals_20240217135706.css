@@ -1,0 +1,20 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.bg-class {
+  height: 700px;
+  background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.7)),
+    url(../../public/header-image.png);
+}
+
+.button {
+  @apply text-white bg-red-600 p-3 rounded-sm m-6 hover:bg-red-700 transition ease-out duration-300;
+}
+
+.faq-title {
+  @apply w-full text-lg cursor-pointer bg-white bg-opacity-15 p-5 pl-5  hover:bg-opacity-25 text-left flex col-span-6;
+}
+.faq-description {
+  @apply mt-0.5 transition ease-in-out duration-300 text-left  bg-white bg-opacity-15 p-5;
+}
