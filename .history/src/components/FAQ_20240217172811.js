@@ -16,6 +16,7 @@ export default function FAQ() {
   useEffect(() => {
     // This function will run after each render if data changes.
     // Side effects can be handled here.
+    fetchData();
   }, [iconRotation]); // Only run the effect if data changes
 
   return (
@@ -57,7 +58,7 @@ export default function FAQ() {
           <div className="faq-title">
             <div>How much does Netflix cost?</div>
             <svg
-              className={`w-10 transform rotate-${iconRotation["howMuchDoesItCost"]}`}
+              className={`w-10 transform rotate-45`}
               data-slot="icon"
               fill="none"
               stroke-width="1.5"

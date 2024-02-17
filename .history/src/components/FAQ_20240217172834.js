@@ -57,7 +57,7 @@ export default function FAQ() {
           <div className="faq-title">
             <div>How much does Netflix cost?</div>
             <svg
-              className={`w-10 transform rotate-${iconRotation["howMuchDoesItCost"]}`}
+              className={`w-10 transform rotate-45`}
               data-slot="icon"
               fill="none"
               stroke-width="1.5"
