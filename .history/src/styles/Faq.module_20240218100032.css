@@ -1,0 +1,7 @@
+.faq-svg {
+  width: 2.5rem;
+}
+
+.faq-svg-active {
+  transform: rotate(45deg);
+}

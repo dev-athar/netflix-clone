@@ -3,12 +3,15 @@ import styles from "../styles/Faq.module.css";
 
 export default function FAQ() {
   const [expandedSegment, setExpandedSegment] = useState(null);
+  const [iconRotation, setIconRotation] = useState({}); // State to track icon rotation angle
 
   const toggleExpand = (segment) => {
     if (expandedSegment === segment) {
       setExpandedSegment(null);
+      setIconRotation({ ...iconRotation, [segment]: 0 }); // Reset icon rotation angle when segment is collapsed
     } else {
       setExpandedSegment(segment);
+      setIconRotation({ ...iconRotation, [segment]: 45 }); // Set icon rotation angle to 180 degrees when segment is expanded
     }
   };
 
@@ -20,11 +23,7 @@ export default function FAQ() {
           <div className="faq-title">
             <div>What is Netflix?</div>
             <svg
-              className={`${styles["faq-svg"]} ${
-                expandedSegment === "whatIsNetflix"
-                  ? styles["faq-svg-active"]
-                  : ""
-              }`}
+              className={styles["faq-svg"]}
               data-slot="icon"
               fill="none"
               stroke-width="1.5"
@@ -55,11 +54,7 @@ export default function FAQ() {
           <div className="faq-title">
             <div>How much does Netflix cost?</div>
             <svg
-              className={`${styles["faq-svg"]} ${
-                expandedSegment === "howMuchDoesItCost"
-                  ? styles["faq-svg-active"]
-                  : ""
-              }`}
+              className={`w-10 transform rotate-${iconRotation["howMuchDoesItCost"]}`}
               data-slot="icon"
               fill="none"
               stroke-width="1.5"
@@ -87,11 +82,7 @@ export default function FAQ() {
           <div className="faq-title">
             <div>Where can I watch?</div>
             <svg
-              className={`${styles["faq-svg"]} ${
-                expandedSegment === "whereCanIWatch"
-                  ? styles["faq-svg-active"]
-                  : ""
-              }`}
+              className={`w-10 transform rotate-${iconRotation["whereCanIWatch"]}`}
               data-slot="icon"
               fill="none"
               stroke-width="1.5"
@@ -124,11 +115,7 @@ export default function FAQ() {
           <div className="faq-title">
             <div>How do I cancel?</div>
             <svg
-              className={`${styles["faq-svg"]} ${
-                expandedSegment === "howDoICancel"
-                  ? styles["faq-svg-active"]
-                  : ""
-              }`}
+              className={`w-10 transform rotate-${iconRotation["howDoICancel"]}`}
               data-slot="icon"
               fill="none"
               stroke-width="1.5"
